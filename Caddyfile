@@ -12,5 +12,7 @@ http://:8088 {
         browse
     }
     log
+    @crt path *.crt
+    header @crt Content-Disposition attachment
 }
 
