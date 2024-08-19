@@ -1,0 +1,16 @@
+purah.local {
+    encode gzip
+    root * /srv/
+    file_server
+    log
+}
+
+http://:8088 {
+    encode gzip
+    root * /srv-ca-cert/
+    file_server {
+        browse
+    }
+    log
+}
+

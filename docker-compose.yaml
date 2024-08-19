@@ -1,0 +1,15 @@
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8088:8088"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/site:/srv
+      - $PWD/ca-cert:/srv-ca-cert
+      - $PWD/logs:/caddy-logs
+      - $PWD/data:/data
+      - $PWD/config:/config
